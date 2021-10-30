@@ -15,11 +15,13 @@
 #ifndef i2cEncoderLibV2_H
 #define i2cEncoderLibV2_H
 
-#if (ARDUINO >= 100)
-#include <Arduino.h>
-#else
-#include <WProgram.h>
-#endif
+//#if (ARDUINO >= 100)
+//#include <Arduino.h>
+//#else
+//#include <WProgram.h>
+//#endif
+
+#include <SoftwareWire.h>
 
 class i2cEncoderLibV2 {
 public:
@@ -184,7 +186,7 @@ public:
 	Callback onFadeProcess = NULL;
 
 	/** Configuration methods **/
-	i2cEncoderLibV2(uint8_t add);
+	i2cEncoderLibV2(uint8_t add, SoftwareWire *wire);
 	void begin(uint16_t conf);
 	void reset(void);
 	void autoconfigInterrupt(void);
@@ -292,6 +294,8 @@ public:
 	void writeEEPROM(uint8_t add, uint8_t data);
 
 private:
+
+	SoftwareWire *_wire;
 
 	uint8_t _clockstreach; 
 	uint8_t _add = 0x00;
