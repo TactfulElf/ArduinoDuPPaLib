@@ -1,5 +1,7 @@
 # DuPPa library for the Arduino IDE
 
+This is a fork of the original ArduinoDuPPaLib Library and it works with the SoftwareWire Library, instead of hardware I2C.
+
 In this repository there is a library collection of the DuPPa boards for the Arduino IDE.
 
 All the boards are available on [Tindie!](https://www.tindie.com/stores/Saimon/)
